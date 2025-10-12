@@ -1,0 +1,6 @@
+patient_id,path,label,split
+# Example rows (remove the leading '#' to use)
+# P001,/absolute/or/relative/path/P001_scan01.png,0,train
+# P001,/absolute/or/relative/path/P001_scan02.png,0,train
+# P002,/path/P002_scan01.png,1,val
+# P003,/path/P003_scan01.png,0,test

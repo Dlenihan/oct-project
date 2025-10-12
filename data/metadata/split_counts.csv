@@ -1,0 +1,13 @@
+split,label,count
+test,0,250
+test,1,250
+test,2,250
+test,3,250
+train,0,31476
+train,1,9646
+train,2,7324
+train,3,43469
+val,0,5729
+val,1,1702
+val,2,1292
+val,3,7671

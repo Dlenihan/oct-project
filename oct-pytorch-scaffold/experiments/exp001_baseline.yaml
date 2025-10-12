@@ -1,0 +1,23 @@
+# experiments/exp001_baseline.yaml
+project_name: oct_cls
+seed: 42
+
+data:
+  labels_csv: "/Users/diarmuidlenihan/Documents/OCT_Project/data/metadata/labels.csv"
+  train_split: train
+  val_split: val
+  test_split: test
+  img_size: 224
+  batch_size: 32
+  num_workers: 2
+
+model:
+  name: resnet18
+  pretrained: true
+  num_classes: 4
+
+train:
+  epochs: 1
+  lr: 0.001
+  optimizer: adam
+  scheduler: none

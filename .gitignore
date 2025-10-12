@@ -1,0 +1,6 @@
+data/raw/
+runs/
+logs/
+*.ckpt
+__pycache__/
+.DS_Store

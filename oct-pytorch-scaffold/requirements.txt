@@ -1,0 +1,11 @@
+# Minimal packages (install torch/torchvision separately on HPC for correct CUDA)
+numpy
+pandas
+matplotlib
+scikit-image
+scikit-learn
+Pillow
+PyYAML
+tqdm
+tensorboard
+opencv-python
