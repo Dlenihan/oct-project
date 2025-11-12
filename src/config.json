@@ -1,0 +1,60 @@
+{
+    "name": "resnet18_oct",
+    "seed": 42,
+    "deterministic": false,
+    "n_gpu": 0,
+    "metrics": ["accuracy", "macro_f1"],
+    "data_loader": {
+        "type": "OCTDataModule",
+        "args": {
+            "csv_path": "data/metadata/labels_patient_split.csv",
+            "batch_size": 32,
+            "num_workers": 4,
+            "image_size": 224,
+            "pin_memory": false,
+            "drop_last": false,
+            "mean": 0.5,
+            "std": 0.5,
+            "train_augmentations": {
+                "RandomHorizontalFlip": {"p": 0.5}
+            }
+        }
+    },
+    "model": {
+        "type": "ResNet18Classifier",
+        "args": {
+            "num_classes": 4,
+            "pretrained": false,
+            "in_channels": 1,
+            "dropout": 0.0
+        }
+    },
+    "loss": {
+        "type": "CrossEntropyLossWithWeights",
+        "args": {
+            "class_weights_from_csv": "data/metadata/labels_patient_split.csv"
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args": {
+            "lr": 0.0001,
+            "weight_decay": 0.0001
+        }
+    },
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 10,
+            "gamma": 0.1
+        }
+    },
+    "trainer": {
+        "epochs": 20,
+        "save_dir": "results",
+        "save_period": 1,
+        "monitor": "max val_macro_f1",
+        "early_stop": 10,
+        "log_step": 10
+    }
+}
