@@ -1,0 +1,42 @@
+# === DO NOT UPLOAD DATASET ===
+data/OCT/
+data/**/*.jpeg
+data/**/*.jpg
+data/**/*.png
+data/**/*.tiff
+data/**/*.bmp
+
+# Metadata that contains absolute paths
+data/metadata/labels_patient_split*.csv
+
+# Python + training artefacts
+# === DO NOT UPLOAD DATASET ===
+data/OCT/
+data/**/*.jpeg
+data/**/*.jpg
+data/**/*.png
+data/**/*.tiff
+data/**/*.bmp
+
+# Metadata that contains absolute paths
+data/metadata/labels_patient_split*.csv
+
+# Python + training artefacts
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.DS_Store
+
+# Template / training run outputs
+saved/
+runs/
+log/
+logs/
+results/
+
+# Jupyter outputs
+*.ipynb_checkpoints/
+
+# OS junk
+.DS_Store

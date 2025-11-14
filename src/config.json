@@ -1,0 +1,38 @@
+{
+  "name": "oct_resnet18_baseline",
+  "n_gpu": 1,
+
+  "data_loader": {
+    "type": "OCTDataLoaders",
+    "args": {
+      "csv_path": "data/metadata/labels_patient_split_localpaths.csv",
+      "img_size": 224,
+      "batch_size": 8,
+      "num_workers": 0,
+      "augment": false
+    }
+  },
+
+  "arch": {
+    "type": "resnet18",
+    "args": {"pretrained": true, "num_classes": 4}
+  },
+
+  "optimizer": {
+    "type": "Adam",
+    "args": {"lr": 1e-4, "weight_decay": 0.0}
+  },
+
+  "loss": {"type": "CrossEntropyWeighted"}, 
+  "metrics": ["accuracy"],
+
+  "trainer": {
+    "epochs": 2,
+    "save_dir": "saved/",
+    "save_period": 1,
+    "verbosity": 2,
+    "monitor": "min val_loss",
+    "early_stop": 0,
+    "tensorboard": true
+  }
+}
